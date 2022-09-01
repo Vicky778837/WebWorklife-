@@ -2,8 +2,9 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
     before_action :logged_in_user
 
-
-  # GET /articles or /articles.json
+   def home
+ 
+   end
   def index
     @articles = Article.all
      @articles = Article.paginate(:page => params[:page], :per_page => 3)

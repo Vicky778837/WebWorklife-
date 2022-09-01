@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
   get '/signup', to: 'users#new'
-  root 'articles#index'
+  root 'articles#home'
 
 
 get    '/login',   to: 'sessions#new'

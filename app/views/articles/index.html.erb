@@ -1,13 +1,15 @@
-<h2> Dashboard </h2>
+<h1 class='text-center'>Dashboard</h1>
 <div class="container">
-   <%= link_to"AddArticale",new_article_path,class: "btn btn-primary" %>
    <div class="justify-content-center">
       <%@articles.each do |art|%>
          <div class="card mb-3 m-auto m-0" style="width: 18rem;">
             <div class="card-body">
                <h5 class="card-title"><%=art.title%></h5>
-               <p class="card-text"><%= h truncate(art.body, :length => 80) %></p>
-               <%= link_to"Show",article_path(art.id),class: " btn btn-primary" %>
+               <p class="card-text"><%= truncate(art.body, :length => 80) %></p>
+               <p class="card-text">Created By: <%=art.user.name %></p>
+               <p class="card-text">Created Time: <%=art.user.created_at %></p>
+
+               <%= link_to"Show",article_path(art.id),class: "btn btn-info" %>
             </div>
          </div>
       <% end %>
@@ -21,36 +23,3 @@
 </div>
 
 
-
-<!-- <p id="notice"><%= notice %></p>
-
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%#= article.title %></td>
-        <td><%#= article.body %></td>
-        <td><%#= article.user_id %></td>
-        <td><%#= link_to 'Show', article %></td>
-        <td><%#= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%#= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
- -->

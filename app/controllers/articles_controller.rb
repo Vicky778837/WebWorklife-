@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(root_path), notice: "Article was successfully created." }
+        format.html { redirect_to "/", notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,11 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article.destroy
+    @article = Article.find(params[:id])
+    if current_user == @article.user
+        @article.destroy
+        redirect_to "/"
+    end
 
     respond_to do |format|
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }

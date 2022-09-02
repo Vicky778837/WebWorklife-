@@ -1,0 +1,23 @@
+<% if notice %>
+  <div class="alert alert-info alert-dismissible fade show m-1 box" role="alert">
+    <center><%= notice %></center>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="alert alert-warning alert-dismissible fade show m-1 box" role="alert">
+    <h1 class='text-center'> <%= alert %></h1>
+  </div>
+<% end %>
+
+
+<% if danger %>
+  <div class="alert alert-warning alert-dismissible fade show m-1 box" role="alert">
+   <center> <%= danger %></center>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+setTimeout(function(){$('.box').fadeOut();}, 1000);
+
+</script>

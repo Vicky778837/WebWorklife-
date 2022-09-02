@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
 
 digg_pagination {
   background: white;
@@ -61,3 +63,8 @@ digg_pagination {
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+.image-bg{
+  background-image: url('https://img.freepik.com/premium-photo/turquoise-matt-suede-fabric-background-velvet-texture_113767-1486.jpg?size=626&ext=jpg&ga=GA1.2.960762357.1662017388');
+}
+

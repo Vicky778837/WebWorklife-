@@ -1,14 +1,16 @@
 <div class="container my-4">
-
+    <% if logged_in? %>
+      <p class = "name">  <%= current_user.name%></p>
+    <% end %>
     <p class="font-weight-bold">Bootstrap image slider is responsive and interactive slideshow which is created for
       presenting content, especially images and videos.</p>
 
       <p><strong>Detailed documentation and more examples about Bootstrap image slider you can find in our </strong></p>
 
-<hr class="mt-5">
-  <hr class="mb-5"/>
-    <h2 class="my-5 h2">Article</h2>
+
+  <h1 class='text-center'>Article</h1>
     <!--Carousel Wrapper-->
+
     <div id="carousel-example-1z" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
       <!--Indicators-->
       <ol class="carousel-indicators">
@@ -110,3 +112,10 @@
     <!--/.Carousel Wrapper-->
 
   </div>
+  <style>
+ .name{
+  margin-left:1300px;
+ }
+
+
+  </style>

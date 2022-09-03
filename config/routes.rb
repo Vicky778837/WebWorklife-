@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   get '/signup', to: 'users#new'
   root 'articles#home'
+    get '/show_articles', to: 'articles#show_articles'
+     get '/show', to: 'users#destroy'
 
 
 get    '/login',   to: 'sessions#new'
